@@ -1,0 +1,44 @@
+{
+  "flaxen-green": {
+    "template": "ubuntu-2204-x86_64",
+    "lifetime": 335,
+    "running": 215.29,
+    "remaining": 119.71,
+    "start_time": "2024-04-29T10:51:22+00:00",
+    "end_time": "2024-05-13T09:51:22+00:00",
+    "state": "running",
+    "tags": {
+      "user": "gavin.didrichsen"
+    },
+    "ip": "",
+    "fqdn": "flaxen-green.vmpooler-prod.puppet.net"
+  },
+  "brighter-bull": {
+    "template": "ubuntu-2204-x86_64",
+    "lifetime": 12,
+    "running": 2.01,
+    "remaining": 9.99,
+    "start_time": "2024-05-08T08:08:05+00:00",
+    "end_time": "2024-05-08T20:08:05+00:00",
+    "state": "running",
+    "tags": {
+      "user": "gavin.didrichsen"
+    },
+    "ip": "",
+    "fqdn": "brighter-bull.vmpooler-prod.puppet.net"
+  },
+  "merry-insertion": {
+    "template": "ubuntu-2204-x86_64",
+    "lifetime": 12,
+    "running": 2.01,
+    "remaining": 9.99,
+    "start_time": "2024-05-08T08:07:49+00:00",
+    "end_time": "2024-05-08T20:07:49+00:00",
+    "state": "running",
+    "tags": {
+      "user": "gavin.didrichsen"
+    },
+    "ip": "",
+    "fqdn": "merry-insertion.vmpooler-prod.puppet.net"
+  }
+}

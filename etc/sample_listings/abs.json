@@ -1,0 +1,100 @@
+{
+  "gavin.didrichsen-1715085630672": {
+    "state": "allocated",
+    "last_processed": "2024-05-08 10:08:35 +0000",
+    "instance_id": {
+      "ubuntu-2204-arm64": {
+        "i-0b879e36e9df9b9e8": "configured",
+        "i-00281f113d1a6e5b5": "configured"
+      }
+    },
+    "allocated_resources": [
+      {
+        "hostname": "ip-10-227-4-221.amz-dev.puppet.net",
+        "instance": "i-0b879e36e9df9b9e8",
+        "region": "us-west-2",
+        "type": "ubuntu-2204-arm64",
+        "engine": "aws"
+      },
+      {
+        "hostname": "ip-10-227-4-86.amz-dev.puppet.net",
+        "instance": "i-00281f113d1a6e5b5",
+        "region": "us-west-2",
+        "type": "ubuntu-2204-arm64",
+        "engine": "aws"
+      },
+      {
+        "hostname": "asteroidal-vein.delivery.puppetlabs.net",
+        "type": "win-2019-x86_64",
+        "engine": "ondemand"
+      },
+      {
+        "hostname": "kind-bracing.delivery.puppetlabs.net",
+        "type": "redhat-8-x86_64",
+        "engine": "ondemand"
+      }
+    ],
+    "requested": true,
+    "requested_status": "win-2019-x86_64 (ready: 0, pending: 1) redhat-8-x86_64 (ready: 1, pending: 0)",
+    "audit_log": {
+      "2024-05-07 12:40:41 +0000": "Failure to safely allocate. Allocated resources are empty or nil",
+      "2024-05-07 12:42:47 +0000": "Allocated asteroidal-vein.delivery.puppetlabs.net, kind-bracing.delivery.puppetlabs.net for job gavin.didrichsen-1715085630672",
+      "2024-05-07 12:42:56 +0000": "Not a Jenkins job. Could not determine status."
+    },
+    "request": {
+      "resources": {
+        "ubuntu-2204-arm64": 2,
+        "win-2019-x86_64": 1,
+        "redhat-8-x86_64": 1
+      },
+      "job": {
+        "id": "gavin.didrichsen-1715085630672",
+        "tags": {
+          "user": "gavin.didrichsen"
+        },
+        "user": "gavin.didrichsen",
+        "time-received": "2024-05-07 12:40:32 +0000"
+      },
+      "priority": 3,
+      "vm_token": "XXXX"
+    }
+  },
+  "gavin.didrichsen-1715155341423": {
+    "state": "allocated",
+    "last_processed": "2024-05-08 10:08:30 +0000",
+    "requested": true,
+    "requested_status": "ubuntu-2204-x86_64 (ready: 0, pending: 2)",
+    "audit_log": {
+      "2024-05-08 08:03:04 +0000": "Failure to safely allocate. Allocated resources are empty or nil",
+      "2024-05-08 08:08:50 +0000": "Allocated brighter-bull.vmpooler-prod.puppet.net, merry-insertion.vmpooler-prod.puppet.net for job gavin.didrichsen-1715155341423",
+      "2024-05-08 08:10:49 +0000": "Not a Jenkins job. Could not determine status."
+    },
+    "allocated_resources": [
+      {
+        "hostname": "brighter-bull.vmpooler-prod.puppet.net",
+        "type": "ubuntu-2204-x86_64",
+        "engine": "ondemand"
+      },
+      {
+        "hostname": "merry-insertion.vmpooler-prod.puppet.net",
+        "type": "ubuntu-2204-x86_64",
+        "engine": "ondemand"
+      }
+    ],
+    "request": {
+      "resources": {
+        "ubuntu-2204-x86_64": 2
+      },
+      "job": {
+        "id": "gavin.didrichsen-1715155341423",
+        "tags": {
+          "user": "gavin.didrichsen"
+        },
+        "user": "gavin.didrichsen",
+        "time-received": "2024-05-08 08:02:22 +0000"
+      },
+      "priority": 3,
+      "vm_token": "XXXX"
+    }
+  }
+}

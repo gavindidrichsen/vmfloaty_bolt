@@ -1,4 +1,4 @@
 ---
-BUNDLE_PATH: ".direnv/ruby/gems"
+BUNDLE_PATH: "vendor/bundle"
+BUNDLE_BIN: "vendor/bin"
 BUNDLE_GEMFILE: "Gemfile"
-BUNDLE_BIN: ".direnv/bin"

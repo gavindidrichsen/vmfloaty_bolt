@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
 require 'json'
 require 'yaml'
+require 'fileutils'
 
 class InventoryManager
-  def initialize
+  def initialize(vmfloaty_dir = File.expand_path('~/.vmfloaty'))
+    # ensure the $vmfloaty_dir exists
+    FileUtils.mkdir_p(vmfloaty_dir)
+    @vmfloaty_dir = vmfloaty_dir
     @inventory_json = fetch_inventory_json
   end
 
@@ -37,7 +41,21 @@ class InventoryManager
   end
 
   def save_inventory_yaml(parsed_json)
-    output = { 'targets' => [] }
+    output = {
+      'config' => {
+        'transport' => 'ssh',
+        'ssh' => {
+          'native-ssh' => true,
+          'load-config' => true,
+          'login-shell' => 'bash',
+          'tty' => false,
+          'host-key-check' => false,
+          'run-as' => 'root',
+          'user' => 'root'
+        }
+      },
+      'targets' => []
+    }
 
     # loop over each vmfloaty VM and create a bolt ssh target
     parsed_json.each do |_key, value|
@@ -46,22 +64,14 @@ class InventoryManager
         'uri' => value['fqdn'],
         'alias' => [],
         'config' => {
-          'transport' => 'ssh',
-          'ssh' => {
-            'native-ssh' => true,
-            'load-config' => true,
-            'login-shell' => 'bash',
-            'tty' => false,
-            'host-key-check' => false,
-            'run-as' => 'root',
-            'user' => 'root'
-          }
+          'transport' => 'ssh'
         }
       }
+
       output['targets'] << target
     end
 
-    output_file_path = './inventory.yaml'
+    output_file_path = File.join(@vmfloaty_dir, 'inventory.yaml')
     begin
       File.open(output_file_path, 'w') { |file| file.write(output.to_yaml) }
       puts "Inventory.yaml generated successfully at #{output_file_path}"
@@ -90,7 +100,7 @@ class InventoryManager
       end
     end
 
-    output_file_path = './.ssh_config'
+    output_file_path = File.join(@vmfloaty_dir, '.ssh_config')
     begin
       File.open(output_file_path, 'w') { |file| file.write(ssh_config) }
       puts ".ssh_config generated successfully at #{output_file_path}"
@@ -100,6 +110,7 @@ class InventoryManager
     end
   end
 end
+
 
 if __FILE__ == $PROGRAM_NAME
   inventory_manager = InventoryManager.new
